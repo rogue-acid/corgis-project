@@ -8,17 +8,17 @@
     <!--page content-->
 	
 	
-	<title>Earthquake Facts</title>
+	<h1>Highest Magnitude Earthquake in these places</h1>
 
 
 	<form action="/showFact">
-	  <select name="location"> <!-- add onchange="this.form.submit()" to submit/update the form when an option is selected.  Usefull for then displaying county options. -->
+	  <select class="form_style" name="location"> <!-- add onchange="this.form.submit()" to submit/update the form when an option is selected.  Usefull for then displaying county options. -->
 		{{ earthquake_options }}
 	  </select>
 	  <br><br>
-	  <input type="submit" value="Get a fun fact!">
+	  <input class="form_style" type="submit" value="Get Earthquake Magnitude">
 	</form>
-	<div id="funFact">
+	<div class="result_style" id="funFact">
 		<p>{{ funFact }}</p>
 	</div>
 

@@ -1,3 +1,32 @@
 body {
 	background-color: SeaGreen;
 }
+
+#page2text {
+	background-color: white;
+	border: solid;
+	text-align: center;
+	margin-top: 1em;
+}
+
+h1 {
+	background-color: white;
+	border: solid;
+	text-align: center;
+	margin-top: 1em;
+}
+
+.form_style {
+	margin: auto;
+	max-width: fit-content;
+	border: solid;
+	display: block;
+}
+
+.result_style {
+	margin: auto;
+	max-width: fit-content;
+	border: solid;
+	display: block;
+	background-color: white;
+}

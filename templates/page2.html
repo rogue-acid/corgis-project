@@ -10,59 +10,31 @@
 
 <script>
 window.onload = function () {
+var points = [];
+
+
+for (let mag of {{ magnitudes }} ) {
+	points.push( { "x": new Date(mag.x), "y": mag.y} )
+}
 
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	theme: "light2",
 	title:{
-		text: "Simple Line Chart"
+		text: "Earthquake Magnitude Over Time"
 	},
 	axisY: {
-		title: "Earthquake Magnitude(Mw)",
+		title: "Earthquake Magnitude",
 		valueFormatString: "0.00",
-		crosshair: {
-			enabled: true,
-			snapToDataPoint: true,
-			labelFormatter: function(e) {
-				return CanvasJS.formatNumber(e.value, "0.00") + " Mw";
-			}
-		}
 	},
 	axisX: {
-		title: "Time(days)",
-		valueFormatString: "0.00",
-		crosshair: {
-			enabled: true,
-			snapToDataPoint: true,
-			labelFormatter: function(e) {
-				return CanvasJS.formatNumber(e.value, "0") + " days";
-			}
-		}
+		title: "Date",
 	},
+	
 	data: [{        
 		type: "line",
       	indexLabelFontSize: 16,
-		dataPoints: [
-			{ y: 450 },
-			{ y: 414},
-			{ y: 520, indexLabel: "\u2191 highest",markerColor: "red", markerType: "triangle" },
-			{ y: 460 },
-			{ y: 450 },
-			{ y: 500 },
-			{ y: 480 },
-			{ y: 480 },
-			{ y: 410 , indexLabel: "\u2193 lowest",markerColor: "DarkSlateGrey", markerType: "cross" },
-			{ y: 500 },
-			{ y: 480 },
-			{ y: 510 },
-			{ y: 510 },
-			{ y: 510 },
-			{ y: 510 },
-			{ y: 510 },
-			{ y: 510 },
-			{ y: 510 }
-			
-		]
+		dataPoints: points
 	}]
 });
 chart.render();
@@ -73,6 +45,8 @@ chart.render();
 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
 <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
 
+
+<p id="page2text"> The data shows that over time earthquakes have not gotten stronger or weaker and that their magnitude has not seem to increase or decrease in general. <p/>
 
 
 {% endblock %}
