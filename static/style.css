@@ -2,7 +2,7 @@ body {
 	background-color: SeaGreen;
 }
 
-#page2text {
+.text {
 	background-color: white;
 	border: solid;
 	text-align: center;
@@ -16,14 +16,23 @@ h1 {
 	margin-top: 1em;
 }
 
-.form_style {
+
+#dropdown_style {
 	margin: auto;
 	max-width: fit-content;
 	border: solid;
 	display: block;
 }
 
-.result_style {
+#submit_button_style {
+	margin: auto;
+	max-width: fit-content;
+	border: solid;
+	display: block;
+	margin-bottom: 1em;
+}
+
+#result_style {
 	margin: auto;
 	max-width: fit-content;
 	border: solid;
