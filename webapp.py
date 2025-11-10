@@ -31,7 +31,8 @@ def render_page2():
 
 @app.route("/p3")
 def render_page3():
-    return render_template('page3.html')
+   earthquakes = get_earthquake_locations()
+   return render_template('page3.html', earthquake_options=earthquakes)
      
     
     
@@ -42,6 +43,14 @@ def render_fact():
     highest_mag_in_location = highest_magnitude_earthquake(location)
     fact = "In " + location + " the highest magnitude earthquake to happen in 2016 is " + str(highest_mag_in_location)
     return render_template('page1_extend.html', earthquake_options=earthquake_locations, funFact=fact)
+    
+@app.route('/showFact2')
+def render_fact2():
+    earthquake_locations = get_earthquake_locations()
+    location = request.args.get('location')
+    highest_mag_in_location = highest_magnitude_earthquake(location)
+    fact = "In " + location + " the highest magnitude earthquake to happen in 2016 is " + str(highest_mag_in_location)
+    return render_template('page3_extend.html', earthquake_options=earthquake_locations, funFact=fact)
     
     
 def get_earthquake_locations():

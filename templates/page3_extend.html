@@ -1,0 +1,16 @@
+{% extends "page3.html" %}
+
+{% set active_page = "page3" %}
+
+{% block title %}page3{% endblock %}
+
+{% block content %}
+    <!--page content-->
+	{{ super() }} 
+	
+	<div id="result_style" id="funFact">
+		<p>{{ funFact }}</p>
+	</div>
+
+
+{% endblock %}
